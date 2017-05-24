@@ -2,6 +2,9 @@ package com.example.password_validator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,6 +12,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void event(View view) {
+        EditText editText = (EditText) findViewById(R.id.input);
+        String message = editText.getText().toString();
+
+        if(validate(message)) {
+            TextView textView = (TextView) findViewById(R.id.display);
+            textView.setText("Password is Valid.");
+        }
+        else{
+            TextView textView = (TextView) findViewById(R.id.display);
+            textView.setText("Password is NOT Valid.");
+        }
     }
 
 
