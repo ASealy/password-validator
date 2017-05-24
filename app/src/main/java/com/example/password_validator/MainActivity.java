@@ -11,21 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    static String password="Password11234";
 
-    public boolean validate(String password){
-
-        //these are the inital tests from the assignment
-        if(password.equals("password") || password.length()<8) return false;
-
-        //this test checks to see if the first letter is a capital
-        if(!Character.isUpperCase(password.charAt(0))) return false;
-
-        //this checks if there are both uppercase and lowercase characters in the password
-        if(password.equals(password.toLowerCase())||password.equals(password.toUpperCase())) return false;
-
-        //this checks if the string contains a digit
-        if(!password.matches(".*\\d+.*")) return false;
-
-        return true;
-    }
 }
