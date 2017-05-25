@@ -1,5 +1,6 @@
 package com.example.password_validator;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,9 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     public void event(View view) {
         EditText editText = (EditText) findViewById(R.id.input);
         String message = editText.getText().toString();
+
 
         if(validate(message)) {
             TextView textView = (TextView) findViewById(R.id.display);
@@ -28,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    public boolean validate(String password){
+    public static boolean validate(String password){
 
         //these are the inital tests from the assignment
         if(password.equals("password") || password.length()<8) return false;
@@ -45,4 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
+
+
 }
